@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    environment: 
+      MYSQL_DATABASE: 'wellness-hack-api_dev'
+      MYSQL_ROOT_PASSWORD: 'mysql'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
+
+  #api:
+    #build: 
+    #  context: .
+   #   dockerfile: Dockerfile
+   # container_name: wellness_hack
+   # volumes:
+   #   - "./wellness_hack:/wellness_hack"
+   # ports:
+   #   - "3000:3000"
+   # working_dir: "/wellness_hack"
